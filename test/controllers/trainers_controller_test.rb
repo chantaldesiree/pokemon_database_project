@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class PokemonControllerTest < ActionDispatch::IntegrationTest
+class TrainersControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get pokemon_index_url
+    get trainers_index_url
     assert_response :success
   end
 
   test "should get show" do
-    get pokemon_show_url
+    get trainers_show_url
     assert_response :success
   end
 
