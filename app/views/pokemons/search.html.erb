@@ -1,0 +1,7 @@
+<p class="mb-5">Search results found <%= pluralize(@pokemons.count, 'video game') %> when searching for: <%= params[:keywords] %></p>
+
+<ul>
+  <% @pokemons.each do |pokemon| %>
+    <li><%= link_to pokemon.name, pokemon %></li>
+  <% end %>
+</ul>
