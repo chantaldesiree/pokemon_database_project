@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_16_181849) do
+ActiveRecord::Schema.define(version: 2020_10_17_033854) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2020_10_16_181849) do
     t.integer "region_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trainer_pokemons", force: :cascade do |t|
+    t.integer "trainer_id", null: false
+    t.integer "pokemon_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pokemon_id"], name: "index_trainer_pokemons_on_pokemon_id"
+    t.index ["trainer_id"], name: "index_trainer_pokemons_on_trainer_id"
   end
 
   create_table "trainers", force: :cascade do |t|
@@ -28,4 +37,6 @@ ActiveRecord::Schema.define(version: 2020_10_16_181849) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "trainer_pokemons", "pokemons"
+  add_foreign_key "trainer_pokemons", "trainers"
 end
