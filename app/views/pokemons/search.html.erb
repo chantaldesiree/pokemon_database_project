@@ -1,7 +1,16 @@
-<p class="mb-5">Search results found <%= pluralize(@pokemons.count, 'video game') %> when searching for: <%= params[:keywords] %></p>
+<%= form_with(url: search_pokemons_path, method: :get, local: true) do %>
+    <div class="field">
+    <div class="columns is-gapless">
+        <div class="column is-full"><%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Pokemon") %></div>
+        <div class="column"><%= submit_tag("Search", class: "button is-info") %></div>
+    </div>
+    </div>
+<% end %>
+
+<p class="mb-5 mt-5">Search results found <%= @pokemons.count %> Pokemon when searching for: <%= params[:keywords] %></p>
 
 <ul>
   <% @pokemons.each do |pokemon| %>
-    <li><%= link_to pokemon.name, pokemon %></li>
+    <li><%= link_to pokemon.name.capitalize(), pokemon %></li>
   <% end %>
 </ul>
