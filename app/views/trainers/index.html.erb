@@ -1,7 +1,7 @@
-<h1>Trainers</h1>
+<h1 class="title is-1">Trainers</h1>
 
 <ul>
     <% @trainers.each do |trainer| %>
-        <li><%= link_to trainer.name, trainer %></li>
+        <li><%= link_to trainer.name, trainer %> - from the <%= trainer.region_id %> Region</li>
     <% end %>
 </ul>
