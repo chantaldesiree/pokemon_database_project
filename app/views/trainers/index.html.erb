@@ -2,6 +2,6 @@
 
 <ul>
     <% @trainers.each do |trainer| %>
-        <li><%= link_to trainer.name, trainer %> - from the <%= trainer.region_id %> Region</li>
+        <li><%= link_to trainer.name, trainer %> - from the <%= @region[trainer.region_id.to_s].capitalize() %> Region</li>
     <% end %>
 </ul>

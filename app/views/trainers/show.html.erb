@@ -1,1 +1,8 @@
-<h1><%= @trainer.name %></h1>
+<h1 class="title is-1"><%= @trainer.name %></h1>
+
+<p><%= @trainer.name %> is a Pokemon Trainer from the <%= @region[@trainer.region_id.to_s].capitalize() %> Region.</p>
+
+<p>Their team is made up of:</p>
+<ul>
+<li><%= @trainer.trainer_pokemon %></li>
+<ul>

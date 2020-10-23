@@ -1,1 +1,3 @@
-<h1><%= @pokemon.name.capitalize() %></h1>
+<h1 class="title is-1"><%= @pokemon.id %> <%= @pokemon.name.capitalize() %></h1>
+
+<p><%= @pokemon.name.capitalize() %> is a <%= @pokemon.pokemon_type.capitalize() %>-Type Pokemon from the <%= @region[@pokemon.region_id.to_s].capitalize() %> Region.</p>
