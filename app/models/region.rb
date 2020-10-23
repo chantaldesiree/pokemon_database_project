@@ -1,4 +1,4 @@
 class Region < ApplicationRecord
-  has_many :trainers
-  has_many :pokemons
+  belongs_to :trainers
+  belongs_to :pokemons
 end
