@@ -1,2 +1,21 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="mt-5">
+
+<div>
+<h1 class="title is-1">Pokemon</h1>
+<ul>
+    <% @pokemons.each do |pokemon| %>
+        <li><%= link_to pokemon.name.capitalize(), pokemon %></li>
+    <% end %>
+</ul>
+<p>See more Pokemon <a href="/pokemons/">here.</a>
+</div>
+<br>
+<div>
+<h1 class="title is-1">Trainers</h1>
+<ol>
+    <% @trainers.each do |trainer| %>
+        <li><%= link_to trainer.name, trainer %></li>
+    <% end %>
+</ol>
+<p>See more Pokemon Trainers <a href="/trainers/">here.</a>
+</div>

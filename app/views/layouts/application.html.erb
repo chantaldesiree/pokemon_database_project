@@ -11,12 +11,31 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<header class="header">
+  <div class="container">
+    <nav class="level">
+      <div class="level-left">
+        <div class="level-item title is-1 has-text-white-ter">
+          The <%= link_to root_path do %><%= image_tag('https://www.pinclipart.com/picdir/big/379-3791327_pokemon-logos-png-vector-pokemon-logo-transparent-background.png', :size => '260x180', :class => 'mr-5 ml-5') %><% end %> Database
+        </div>
+      </div>
+      <div class="level-right">
+        <p class="level-item has-text-white-ter">
 
- <body>
-  <section class="section">
-    <div class="container">
-      <%= yield %>
-    </div>
-  </section>
+        </p>
+      </div>
+    </nav>
+  </div>
+</header>
+<section class="section">
+  <div class="container">
+    <%= yield %>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    Copyright © 2020. Chantal Wiebe.
+  </div>
+</footer>
   </body>
 </html>

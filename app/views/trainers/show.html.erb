@@ -2,6 +2,8 @@
 
 <p><%= @trainer.name %> is a Pokemon Trainer from the <%= @region[@trainer.region_id.to_s].capitalize() %> Region.</p>
 
+<p>They are <%= @trainer.gender %> and <%= @trainer.age %> years old.</p>
+
 <p>Their team is made up of:</p>
 <ul>
 <li><%= @trainer.trainer_pokemon %></li>
