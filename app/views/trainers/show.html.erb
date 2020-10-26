@@ -1,10 +1,10 @@
 <h1 class="title is-1"><%= @trainer.name %></h1>
 
-<p><%= @trainer.name %> is a Pokemon Trainer from the <%= @region[@trainer.region_id.to_s].capitalize() %> Region.</p>
+<p class="title is-4"><%= @trainer.name %> is a <%= @trainer.gender %>, <%= @trainer.age %> years old Pokemon Trainer from the <%= @region[@trainer.region_id.to_s].capitalize() %> region.</p>
 
-<p>They are <%= @trainer.gender %> and <%= @trainer.age %> years old.</p>
-
-<p>Their team is made up of:</p>
+<p class="mt-5">Their main Pokemon is currently:</p>
 <ul>
 <li><%= @trainer.trainer_pokemon %></li>
 <ul>
+
+<p class="mt-5"><%= link_to 'Back', trainers_path %></p>

@@ -1,6 +1,7 @@
 class PokemonsController < ApplicationController
   def index
-    @pokemons = Pokemon.all
+    @pokemons = Pokemon.all.page(params[:page])
+    @pokemon_types = Pokemon.pluck(:pokemon_type).uniq
   end
 
   def show
@@ -17,7 +18,10 @@ class PokemonsController < ApplicationController
   end
 
   def search
+    @pokemon_types = Pokemon.pluck(:pokemon_type).uniq
     wildcard_search = "%#{params[:keywords]}%"
-    @pokemons = Pokemon.where("name LIKE ?", wildcard_search)
+    category_search = "%#{params[:category]}%"
+
+    @pokemons = Pokemon.where("name LIKE ?", wildcard_search).where("pokemon_type LIKE ?", category_search.downcase())
   end
 end
