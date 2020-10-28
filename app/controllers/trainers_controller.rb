@@ -1,8 +1,7 @@
 class TrainersController < ApplicationController
 
-
   def index
-    @trainers = Trainer.all
+    @trainers = Trainer.all.page(params[:page])
     @region = {
       "0"  => "kanto",
       "1"  => "johto",
@@ -25,5 +24,6 @@ class TrainersController < ApplicationController
       "5"  => "kalos",
       "6"  => "alola",
       "7"  => "galar" }
+    @pokemon = Pokemon.find_by(params[:name])
   end
 end

@@ -1,3 +1,4 @@
+<% content_for(:html_title) { @pokemon.name } %>
 <h1 class="title is-1">#<%= @pokemon.id %> - <%= @pokemon.name.capitalize() %></h1>
 
 <p class="title is-3"><%= @pokemon.name.capitalize() %> is a <%= @pokemon.pokemon_type.capitalize() %>-Type Pokemon found in the <%= @region[@pokemon.region_id.to_s].capitalize() %> region.</p>
@@ -7,4 +8,4 @@
   <img src="<%= @pokemon.pokemon_back %>" width="192px" height="192px"/>
 </div>
 
-<p class="mt-5"><%= link_to 'Back', pokemons_path %></p>
+<p class="mt-5"><a href='#' style="text-decoration:none;" onclick='history.go(-1);return false;'>Back</a></p>

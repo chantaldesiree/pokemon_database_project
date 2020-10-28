@@ -1,5 +1,5 @@
 class Trainer < ApplicationRecord
-    paginates_per 25
+    paginates_per 15
 
     has_many :pokemons
     belongs_to :regions, optional: true

@@ -5,7 +5,7 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    @pokemon = Pokemon.find(params[:id])
+    @pokemon = Pokemon.friendly.find(params[:id])
     @region = {
       "0"  => "kanto",
       "1"  => "johto",
@@ -22,6 +22,7 @@ class PokemonsController < ApplicationController
     wildcard_search = "%#{params[:keywords]}%"
     category_search = "%#{params[:category]}%"
 
-    @pokemons = Pokemon.where("name LIKE ?", wildcard_search).where("pokemon_type LIKE ?", category_search.downcase())
+    @count = Pokemon.where("name LIKE ?", wildcard_search).where("pokemon_type LIKE ?", category_search.downcase())
+    @pokemons = Pokemon.where("name LIKE ?", wildcard_search).where("pokemon_type LIKE ?", category_search.downcase()).page(params[:page]).per(20)
   end
 end

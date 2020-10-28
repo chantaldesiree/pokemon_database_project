@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @trainers = Trainer.limit(10)
+    @trainers = Trainer.limit(20)
 
-    @pokemons = Pokemon.limit(25)
+    @pokemons = Pokemon.limit(20)
   end
 end

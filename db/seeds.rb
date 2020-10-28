@@ -13,26 +13,34 @@ end
 
 puts "Created #{region.count} Regions"
 
-20.times do
+75.times do
+    trainer_team = ""
+    6.times do
+        trainer_pokemon = PokeApi.get(pokemon: rand(1..385)).name.capitalize()
+        trainer_team = "#{trainer_team} #{trainer_pokemon}"
+    end
+
+    puts trainer_team
+
     trainer = Trainer.create(
         name: Faker::Name.name,
         region_id: rand(0..7),
-        trainer_pokemon: PokeApi.get(pokemon: rand(1..385)).name.capitalize(),
+        trainer_pokemon: trainer_team,
         age: rand(10..50),
-        gender: Faker::Gender.type)
+        gender: Faker::Gender.binary_type)
 
 
     trainer.errors.messages.each do |attribute, error|
         puts "#{attribute} #{error}"
     end
-    puts trainer.name
+    #puts trainer.name
 end
 
 puts "Created #{Trainer.count} trainers."
 
 for i in 1..385
     pokemon = PokeApi.get(pokemon: i)
-    puts pokemon.name
+    #puts pokemon.name
     description = ""
     PokeApi.get(pokemon_species: pokemon.name).flavor_text_entries.find do |text|
         if text.language.name == "en"
