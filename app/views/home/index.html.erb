@@ -2,20 +2,20 @@
 
 <div class="column">
 <h1 class="title is-1">Pokemon</h1>
-<ul>
+<ol class="ml-5">
     <% @pokemons.each do |pokemon| %>
         <li class="mt-2 mb-2"><%= link_to pokemon.name.capitalize(), pokemon %></li>
     <% end %>
-</ul>
+</ol>
 <p>See more Pokemon <a href="/pokemons/">here.</a>
 </div>
 <br>
 <div class="column">
 <h1 class="title is-1">Trainers</h1>
-<ol class="ml-5">
+<ul>
     <% @trainers.each do |trainer| %>
         <li  class="mt-2 mb-2"><%= link_to trainer.name, trainer %></li>
     <% end %>
-</ol>
+</ul>
 <p>See more Pokemon Trainers <a href="/trainers/">here.</a>
 </div>
