@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node index.js"
+  },
   "name": "intro_rails_project_redo",
   "private": true,
   "dependencies": {
